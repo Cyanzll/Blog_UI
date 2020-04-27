@@ -1,4 +1,7 @@
 {
     "success":true,
-    "data":["PHP","Node.js","Vue3.0","Angular.js","React Hooks"]
+    "data":["PHP","Node.js","Vue3.0","Angular.js","Java","ES6","ES2016",
+        "React Hooks","React Native","Redux-Saga","JavaScript","WeChat","c#",
+        "npm","yarn","webpack","asp","tomcat","sevlet","lua","ruby","rust"
+    ]
 }

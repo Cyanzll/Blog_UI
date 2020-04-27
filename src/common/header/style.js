@@ -5,13 +5,13 @@ export const HeaderWrapper = styled.div`
 	position: relative;
 	height: 56px;
 	border-bottom: 1px solid #F0F0F0;
-`
+`;
 
 export const HeaderWidthLimit = styled.div`
 	width: 1440px;
 	height: 56px;
 	margin: 0 auto;
-`
+`;
 
 export const Logo = styled.a.attrs({
 	href: '/'
@@ -24,7 +24,7 @@ export const Logo = styled.a.attrs({
 	display: block;
 	background: url(${logoPic}); //webpack打包问题
 	background-size: contain;
-`
+`;
 
 export const Nav = styled.div`
 	width: 960px;
@@ -32,7 +32,7 @@ export const Nav = styled.div`
 	margin: 0 auto;
 	padding-right: 70px;
 	box-sizing: border-box;
-`
+`;
 
 export const NavItem = styled.div`
 	line-height: 56px;
@@ -65,7 +65,7 @@ export const NavItem = styled.div`
 		color: #ea6f5a;
 	}
 
-`
+`;
 
 export const NavSearch = styled.input.attrs({
 	placeholder: "搜索"
@@ -93,14 +93,14 @@ export const NavSearch = styled.input.attrs({
 	&.slide-exit {
 		transition: all 350ms ease-out;
 	}
-`
+`;
 
 export const Addition = styled.div`
 	position: absolute;
 	right:50px;
 	top: 0;
 	height: 56px;
-`
+`;
 
 export const Button = styled.button`
 	float: right;
@@ -123,7 +123,7 @@ export const Button = styled.button`
 		color: #fff;
 		background: #ec6149;
 	}
-`
+`;
 
 //主要是为了定位“放大镜”图标
 export const NavSearchWrapper = styled.div `
@@ -143,7 +143,7 @@ export const NavSearchWrapper = styled.div `
 			background: #777;
 		}
 	}
-`
+`;
 
 export const SearchInfo = styled.div`
 	position: absolute; //脱标
@@ -174,7 +174,7 @@ export const SearchInfoTitle = styled.div`
 
 export const SearchInfoList = styled.div`
 	overflow: hidden;
-`
+`;
 
 export const SearchInfoItem = styled.a`
 	float: left;

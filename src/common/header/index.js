@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
+import { toJS } from 'immutable';
 import {
 	HeaderWrapper,
 	HeaderWidthLimit,
@@ -20,17 +21,43 @@ import {
 
 class Header extends Component {
 
-	showSearchInfo = ( focus ) => {
-		if( focus ) {
+	showSearchInfo = () => {
+		const{
+			focused,
+			mouseIn,
+			currentPage,
+			totalPage,
+			list,
+			handleMouseEnter,
+			handleMouseLeave,
+			handleSwitchShow
+		} = this.props;
+
+		let endPage;
+		let listToShow = [];
+		const newList = list.toJS();
+
+		if(currentPage !== totalPage) {  //计算切片终点
+			endPage = 10;
+		}else endPage = totalPage % 10;
+
+		listToShow = newList.slice((currentPage - 1) * 10, (currentPage - 1) * 10 + endPage);
+
+		if( focused || mouseIn ) {
 			return (
-				<SearchInfo>
+				<SearchInfo
+					onMouseEnter={handleMouseEnter}
+					onMouseLeave={handleMouseLeave}
+				>
 					<SearchInfoTitle>
 						<span className="title">热门搜索</span>
-						<span className="switch">换一批</span>
+						<span className="switch"
+							onClick={handleSwitchShow}
+						>换一批</span>
 					</SearchInfoTitle>
 					<SearchInfoList>
-						{this.props.list.map((item, index)=>{
-								return(<SearchInfoItem key={item}>{item}</SearchInfoItem>);
+						{listToShow.map((item)=>{
+							return(<SearchInfoItem>{item}</SearchInfoItem>)
 						})}
 					</SearchInfoList>
 				</SearchInfo>
@@ -41,6 +68,11 @@ class Header extends Component {
 	};
 
 	render() {
+		const {
+			focused,
+			handleInputBlur,
+			handleInputFocus,
+		} = this.props;
 		return (
 			<HeaderWrapper>
 				<HeaderWidthLimit>
@@ -61,17 +93,17 @@ class Header extends Component {
 						<NavSearchWrapper>
 							<CSSTransition
 								timeout = {350}
-								in = {this.props.focused}
+								in = {focused}
 								classNames = "slide"
 							>
 								<NavSearch 
-								className = {this.props.focused ? "focused" : ""}
-								onFocus = {this.props.handleInputFocus}
-								onBlur = {this.props.handleInputBlur}
+								className = {focused ? "focused" : ""}
+								onFocus = {handleInputFocus} //此处有异步请求
+								onBlur = {handleInputBlur}
 								></NavSearch>
 							</CSSTransition>
-							<span className={this.props.focused ? "iconfont focused" : "iconfont"}>&#xe63d;</span>
-							{ this.showSearchInfo(this.props.focused) }
+							<span className={focused ? "iconfont focused" : "iconfont"}>&#xe63d;</span>
+							{ this.showSearchInfo() }
 						</NavSearchWrapper>
 					</Nav>
 					<Addition>
@@ -86,16 +118,28 @@ class Header extends Component {
 
 const mapStateToProps = (state) => ({
 	focused: state.getIn(["header", "focused"]),  //combineReducers, immutable.js
-	list: state.getIn(["header", "list"])
+	mouseIn: state.getIn(["header", "mouseIn"]),
+	list: state.getIn(["header", "list"]),
+	currentPage: state.getIn(["header", "currentPage"])
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
 	handleInputFocus() {
 		dispatch(actionCreators.getList());
-		dispatch(actionCreators.getFocusedAction());
+		dispatch(actionCreators.getFocusedAction()); //此处有异步请求
 	},
 	handleInputBlur() {
 		dispatch(actionCreators.getBlurAction());
+	},
+	handleMouseEnter() {
+		dispatch(actionCreators.getEnterAction());
+	},
+	handleMouseLeave() {
+		dispatch(actionCreators.getLeaveAction());
+	},
+	handleSwitchShow() {
+		dispatch(actionCreators.getSwitchAction(ownProps.currentPage, ownProps.totalPage));
+		console.log(ownProps);
 	}
 });
 
