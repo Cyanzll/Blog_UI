@@ -35,18 +35,22 @@ export const Nav = styled.div`
 `
 
 export const NavItem = styled.div`
-	width: 89px;
 	line-height: 56px;
 	text-align: center;
 	color: #333;
 	font-size: 17px;
+	padding: 0 15px;
 	&.left {
+		margin-right:5px;
 		float: left;
 		.iconfont {
 			line-height: 30px;
 			width: 30px;
 			font-size:17px;
 		}
+	}
+	&.left:hover {
+		background:#eee;
 	}
 	&.right {
 		float: right;
@@ -73,7 +77,6 @@ export const NavSearch = styled.input.attrs({
 	margin-top: 9px;
 	padding: 0 35px 0 20px;
 	background: #eee;
-	margin-left: 50px;
 	border-sizing: border-box;
 	color: #777;
 	&::placeholder {
@@ -112,14 +115,20 @@ export const Button = styled.button`
 		color: #ec6149;
 		background: #fff;
 	}
+	&.reg:hover {
+		background: #eee;
+	}
+	
 	&.write {
 		color: #fff;
 		background: #ec6149;
 	}
 `
 
+//主要是为了定位“放大镜”图标
 export const NavSearchWrapper = styled.div `
 	float: left;
+	margin-left: 30px;
 	position: relative;
 	.iconfont {
 		position: absolute;
@@ -136,3 +145,45 @@ export const NavSearchWrapper = styled.div `
 	}
 `
 
+export const SearchInfo = styled.div`
+	position: absolute; //脱标
+	left: 0;
+	top: 56px;
+	width: 240px;
+	padding: 0 20px 10px 20px;
+	box-shadow: 0 0 8px rgba(0,0,0,.2);
+`;
+
+export const SearchInfoTitle = styled.div`
+	width:100%;
+	height: 20px;
+	margin-top:20px;
+	margin-bottom: 15px;
+	color: #969696;
+	.title {
+		float:left;
+		line-height: 20px;
+		font-size: 17px;
+	}
+	.switch {
+		float: right;
+		line-height: 20px;
+		font-size: 14px;
+	}
+`;
+
+export const SearchInfoList = styled.div`
+	overflow: hidden;
+`
+
+export const SearchInfoItem = styled.a`
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	line-height: 20px;
+	padding: 0 5px;
+	color: #787878;
+	font-size: 12px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+`;
