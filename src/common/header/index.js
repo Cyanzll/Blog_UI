@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
-import { toJS } from 'immutable';
 import {
 	HeaderWrapper,
 	HeaderWidthLimit,
@@ -22,7 +21,7 @@ import {
 class Header extends Component {
 
 	showSearchInfo = () => {
-		const{
+		const {
 			focused,
 			mouseIn,
 			currentPage,
@@ -36,11 +35,9 @@ class Header extends Component {
 		let endPage;
 		let listToShow = [];
 		const newList = list.toJS();
-
 		if(currentPage !== totalPage) {  //计算切片终点
 			endPage = 10;
-		}else endPage = totalPage % 10;
-
+		}else endPage = newList.length % 10;
 		listToShow = newList.slice((currentPage - 1) * 10, (currentPage - 1) * 10 + endPage);
 
 		if( focused || mouseIn ) {
@@ -53,11 +50,13 @@ class Header extends Component {
 						<span className="title">热门搜索</span>
 						<span className="switch"
 							onClick={handleSwitchShow}
-						>换一批</span>
+						>
+							换一批
+						</span>
 					</SearchInfoTitle>
 					<SearchInfoList>
 						{listToShow.map((item)=>{
-							return(<SearchInfoItem>{item}</SearchInfoItem>)
+							return(<SearchInfoItem key={item}>{item}</SearchInfoItem>)
 						})}
 					</SearchInfoList>
 				</SearchInfo>
@@ -123,7 +122,7 @@ const mapStateToProps = (state) => ({
 	currentPage: state.getIn(["header", "currentPage"])
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
 	handleInputFocus() {
 		dispatch(actionCreators.getList());
 		dispatch(actionCreators.getFocusedAction()); //此处有异步请求
@@ -138,8 +137,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 		dispatch(actionCreators.getLeaveAction());
 	},
 	handleSwitchShow() {
-		dispatch(actionCreators.getSwitchAction(ownProps.currentPage, ownProps.totalPage));
-		console.log(ownProps);
+		dispatch(actionCreators.getSwitchAction());
 	}
 });
 

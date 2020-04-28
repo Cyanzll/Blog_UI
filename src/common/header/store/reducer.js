@@ -27,8 +27,10 @@ export default ( state = defaultState, action ) => {
 		case actionTypes.LEAVE:
 			return state.set("mouseIn", false);
 
-		case actionTypes.SWITCH:
-			return state.set("currentPage", action.page);
+		case actionTypes.SWITCH: {
+			const page = state.get("currentPage") === state.get("totalPage") ? 1 : state.get("currentPage") + 1; //循环改变当前页码
+			return state.set("currentPage", page);
+		}
 
 		default:
 			return state;

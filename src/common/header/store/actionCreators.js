@@ -28,13 +28,12 @@ export const getLeaveAction = () => ({
     type:actionTypes.LEAVE
 });
 
-export const getSwitchAction = (currentPage, totalPage) => ({
-		type:actionTypes.SWITCH,
-		page: currentPage == totalPage ? 1 : currentPage + 1
+export const getSwitchAction = () => ({
+		type: actionTypes.SWITCH,
 });
 
 //private
-const getListAction = (data) => ({
+const getListAction = (data) => ({ //data是收到的数组
     type: actionTypes.GET_LIST,
 		data: fromJS(data),
 		totalPage: Math.ceil(data.length/10)
