@@ -49,8 +49,9 @@ class Header extends Component {
 					<SearchInfoTitle>
 						<span className="title">热门搜索</span>
 						<span className="switch"
-							onClick={handleSwitchShow}
+							onClick={() => {handleSwitchShow(this.spinIcon)}}
 						>
+							<span ref={(icon) => {this.spinIcon = icon}} className="iconfont spin">&#xe851;</span>
 							换一批
 						</span>
 					</SearchInfoTitle>
@@ -70,7 +71,8 @@ class Header extends Component {
 		const {
 			focused,
 			handleInputBlur,
-			handleInputFocus,
+      handleInputFocus,
+      list
 		} = this.props;
 		return (
 			<HeaderWrapper>
@@ -97,11 +99,11 @@ class Header extends Component {
 							>
 								<NavSearch 
 								className = {focused ? "focused" : ""}
-								onFocus = {handleInputFocus} //此处有异步请求
+								onFocus = {()=>{handleInputFocus(list)}} 
 								onBlur = {handleInputBlur}
 								></NavSearch>
 							</CSSTransition>
-							<span className={focused ? "iconfont focused" : "iconfont"}>&#xe63d;</span>
+							<span className={focused ? "iconfont focused zoom" : "iconfont zoom"}>&#xe63d;</span>
 							{ this.showSearchInfo() }
 						</NavSearchWrapper>
 					</Nav>
@@ -123,9 +125,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	handleInputFocus() {
-		dispatch(actionCreators.getList());
-		dispatch(actionCreators.getFocusedAction()); //此处有异步请求
+	handleInputFocus(list) {
+    dispatch(actionCreators.getFocusedAction());
+    (list.size === 0) && (dispatch(actionCreators.getList()));
 	},
 	handleInputBlur() {
 		dispatch(actionCreators.getBlurAction());
@@ -136,7 +138,8 @@ const mapDispatchToProps = (dispatch) => ({
 	handleMouseLeave() {
 		dispatch(actionCreators.getLeaveAction());
 	},
-	handleSwitchShow() {
+	handleSwitchShow(spinIcon) {
+		spinIcon.style.transform = "rotate(360deg)";
 		dispatch(actionCreators.getSwitchAction());
 	}
 });

@@ -19,8 +19,11 @@ export default ( state = defaultState, action ) => {
 			return state.set('focused', false);
 
 		case actionTypes.GET_LIST:
-			return state.set("list", action.data).set("totalPage", action.totalPage);
-
+			return state.merge({
+				list: action.data,
+				totalPage: action.totalPage
+			});
+			
 		case actionTypes.ENTER:
 			return state.set("mouseIn", true);
 

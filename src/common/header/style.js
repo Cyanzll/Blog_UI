@@ -130,7 +130,7 @@ export const NavSearchWrapper = styled.div `
 	float: left;
 	margin-left: 30px;
 	position: relative;
-	.iconfont {
+	.zoom {
 		position: absolute;
 		right: 5px;
 		bottom: 5px;
@@ -161,14 +161,24 @@ export const SearchInfoTitle = styled.div`
 	margin-bottom: 15px;
 	color: #969696;
 	.title {
-		float:left;
+		float: left;
 		line-height: 20px;
 		font-size: 17px;
 	}
 	.switch {
 		float: right;
+		display: block;
 		line-height: 20px;
 		font-size: 14px;
+		cursor: pointer;
+		.spin {
+			display: block
+			float:right;
+			font-size: 13px;
+			margin-right: 2px;
+			transition: all 200ms ease-in;
+			transform-origin: center center;
+		}
 	}
 `;
 
