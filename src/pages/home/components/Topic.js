@@ -9,9 +9,14 @@ class Topic extends Component {
 	render() {
 		return (
 			<TopicWrapper>
-				{this.props.topicList.map((item, index)=>{
-					return(<TopicItem><div className="item_img"></div>{item.get("title")}</TopicItem>)
-				})}
+				{
+					this.props.topicList.map((item, index)=>(
+						<TopicItem key={index}>
+							<img className="item_img" alt="" src={item.get("imgUrl")}/>{item.get("title")}
+						</TopicItem>
+					))
+				}
+				<TopicItem className = "more"><a href="">更多热门专题 ></a></TopicItem>
 			</TopicWrapper>
 		)
 	}
@@ -21,8 +26,4 @@ const mapStateToProps = (state) => ({
 	topicList: state.getIn(["home","topicList"])
 });
 
-const mapDispatchToProps = () => {
-	//空
-};
-
-export default connect( mapStateToProps, mapDispatchToProps )( Topic );
+export default connect( mapStateToProps, null )( Topic );
