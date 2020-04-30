@@ -116,3 +116,108 @@ export const Bottom = styled.div`
         line-height: 20px;
     }
 `;
+
+export const Banner = styled.img`
+    width: 280px;
+    height: 50px;
+    margin-bottom: 6px;
+`;
+
+export const DownloadApp = styled.a`
+    display: block;
+    width: 234px;
+    height: 60px;
+    padding: 10px 22px;
+    border: 1px solid rgb(240,240,240);
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    .code {
+        margin-right:14px;
+        width: 60px;
+        height: 60px;
+        float:left;
+    }
+`;
+
+export const DownloadInfo = styled.div`
+    float:left;
+    margin-top: 12px;
+    .main{
+        display: block;
+        font-size: 15px;
+        line-height: 15px;
+        color: #222;
+        margin-bottom: 5px;
+    }
+    .sub {
+        display: block;
+        font-size: 13px;
+        line-height: 18px;
+        color: rgb(153,153,153);
+    }
+`;
+
+export const WriterWrapper = styled.div`
+    width: 280px;
+`;
+
+export const WriterHeader = styled.div`
+    width: 280px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #969696;
+    margin-bottom: 20px;
+    .rec {
+        float: left;
+    }
+    .switch {
+        float: right;
+    }
+    .iconfont {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+`;
+
+export const WriterItem = styled.div`
+    width: 280px;
+    height: 48px;
+    overflow: hidden;
+    .photo {
+        float: left;
+        height: 48px;
+        width: 48px;
+        border-radius: 24px;
+        margin-right: 10px;
+    }
+    margin-bottom: 15px;
+`;
+
+export const WriterInfo = styled.div`
+    float: left;
+    box-sizing: border-box;
+    width: 222px;
+    height: 48px;
+    padding: 10px 0;
+    .header {
+        overflow: hidden;
+    }
+    .name {
+        float: left;
+        font-size: 14px;
+        color: #333;
+    }
+    .add {
+        margin-top:5px;
+        float: right;
+        font-size: 13px;
+        color: #42C02E;
+    }
+    .info {
+        display: block;
+        margin-top: 5px;
+        font-size: 12px;
+        color: #969696;
+    }
+`;

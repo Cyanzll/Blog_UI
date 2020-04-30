@@ -1,5 +1,5 @@
 //根组件
-import React, {Fragment} from 'react';
+import React from 'react';
 import Header from './common/header';
 import store from './store';
 import { BrowserRouter, Route } from 'react-router-dom';
