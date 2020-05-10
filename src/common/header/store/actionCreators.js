@@ -12,11 +12,11 @@ export const getBlurAction = () => ({
 });
 
 export const getList = () => {
-	return (dispatch) =>{
+	return (dispatch) => {
 		axios.get('/api/headerList.json').then((res)=>{
 			const data = res.data;
 			dispatch(getListAction(data.data))
-		}).catch(()=>{console.log("404 NOT FOUND")})	
+		}).catch((ex)=>{console.log("404 NOT FOUND")})	
 	}	
 }
 
@@ -29,7 +29,7 @@ export const getLeaveAction = () => ({
 });
 
 export const getSwitchAction = () => ({
-		type: actionTypes.SWITCH,
+	type: actionTypes.SWITCH,
 });
 
 //private

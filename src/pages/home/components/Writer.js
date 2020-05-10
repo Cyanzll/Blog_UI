@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import {
 	WriterWrapper,
@@ -7,13 +7,13 @@ import {
 	WriterInfo 
 }from '../style'
 
-class Writer extends Component {
+class Writer extends PureComponent {
 
 	showWriterList = () => {
 		
 		return(
-			this.props.writerList.map((item, index) => (
-				<WriterItem>
+			this.props.writerList.map((item) => (
+				<WriterItem key={item.get("id")}>
 					<img className="photo" alt="" src={item.get("imgUrl")}/>
 					<WriterInfo>
 						<div className="header">
@@ -37,7 +37,7 @@ class Writer extends Component {
 						换一批
 					</span>
 				</WriterHeader>
-				{this.showWriterList()}
+				{ this.showWriterList() }
 			</WriterWrapper>
 		)
 	}

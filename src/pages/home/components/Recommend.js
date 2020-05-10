@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import {
 	Banner,
 }from '../style'
 
-class Recommend extends Component {
+class Recommend extends PureComponent {
 	render() {
 		return (
 			<Fragment>

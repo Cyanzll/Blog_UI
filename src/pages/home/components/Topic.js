@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import {
 	TopicWrapper,
 	TopicItem,
 } from "../style";
 
-class Topic extends Component {
+class Topic extends PureComponent {
 	render() {
 		return (
 			<TopicWrapper>
 				{
 					this.props.topicList.map((item, index)=>(
-						<TopicItem key={index}>
+						<TopicItem key={item.get("id")}>
 							<img className="item_img" alt="" src={item.get("imgUrl")}/>{item.get("title")}
 						</TopicItem>
 					))

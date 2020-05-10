@@ -79,12 +79,15 @@ export const ListInfo = styled.div`
     width: 458px;
     float: left;
     .title {
-        margin-bottom: 4px;
         display: block;
+        margin-bottom: 4px;
         color: rgb(47,47,47);
         font-size: 18px;
         line-height: 27px;
         font-weight: 700;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     .article {
         line-height:24px;
@@ -219,5 +222,42 @@ export const WriterInfo = styled.div`
         margin-top: 5px;
         font-size: 12px;
         color: #969696;
+    }
+`;
+
+export const LoadMore = styled.div`
+    width: 595px;
+    height: 20px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    background: #A5A5A5;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #FFF;
+    text-align: center;
+    &:hover {
+        background: rgb(155,155,155);
+    }
+`;
+
+export const GetTop = styled.div`
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(220, 220, 220);
+    position: fixed;
+    right: 100px;
+    bottom: 70px;
+    padding-top: 14px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    .iconfont{
+        font-size:20px;
+        line-hieght:20px;
+        color: rgb(51,51,51);
     }
 `;

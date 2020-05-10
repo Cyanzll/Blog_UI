@@ -2,9 +2,14 @@ import styled from 'styled-components';
 import logoPic from '../../statics/logo.png'; 
 
 export const HeaderWrapper = styled.div`
-	position: relative;
+	position: -webkit-sticky;
+	position: sticky;
+	top:0;
 	height: 56px;
 	border-bottom: 1px solid #F0F0F0;
+	box-shadow: 0 2px 10px rgba(0,0,0,.05);
+	background: #fff;
+	z-index: 1;
 `;
 
 export const HeaderWidthLimit = styled.div`
@@ -13,12 +18,10 @@ export const HeaderWidthLimit = styled.div`
 	margin: 0 auto;
 `;
 
-export const Logo = styled.a.attrs({
-	href: '/'
-})`
+export const Logo = styled.div`
 	position: absolute;
 	top:0;
-	left:50px;
+	left: 240px;
 	width: 100px;
 	height: 56px;
 	display: block;
@@ -30,7 +33,6 @@ export const Nav = styled.div`
 	width: 960px;
 	height: 100%;
 	margin: 0 auto;
-	padding-right: 70px;
 	box-sizing: border-box;
 `;
 
@@ -50,7 +52,7 @@ export const NavItem = styled.div`
 		}
 	}
 	&.left:hover {
-		background:#eee;
+		background:#f5f5f5;
 	}
 	&.right {
 		float: right;
@@ -97,7 +99,7 @@ export const NavSearch = styled.input.attrs({
 
 export const Addition = styled.div`
 	position: absolute;
-	right:50px;
+	right: 240px;
 	top: 0;
 	height: 56px;
 `;
@@ -116,7 +118,7 @@ export const Button = styled.button`
 		background: #fff;
 	}
 	&.reg:hover {
-		background: #eee;
+		background: #f5f5f5;
 	}
 	
 	&.write {
@@ -131,6 +133,7 @@ export const NavSearchWrapper = styled.div `
 	margin-left: 30px;
 	position: relative;
 	.zoom {
+		cursor: pointer;
 		position: absolute;
 		right: 5px;
 		bottom: 5px;
