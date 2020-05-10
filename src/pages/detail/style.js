@@ -140,15 +140,19 @@ export const Avatar = styled.img`
     border: 1px solid rgb(238,238,238);
 `;
 
-export const ArticleBody = styled.p`
-    height: 1000px;
+export const ArticleBody = styled.div`
     font-size: 16px;
+    line-height: 30px;
+    color: rgb(64,64,64);
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 `;
 
 export const RecommendWrapper = styled.div`
     background: #fff;
     width: 228px;
-    height: 320px;
     padding: 16px;
     margin-bottom: 10px;
     position: sticky;
@@ -158,5 +162,21 @@ export const RecommendWrapper = styled.div`
         border-left: 4px solid rgb(236,114,89);
         font-size: 16px;
         padding-left: 6px;
+    }
+`;
+
+export const RecItem = styled.div`
+    width: 228px;
+    margin-bottom: 12px;
+    .head {
+        color: rgb(64,64,64);
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 4px;
+    }
+    .total {
+        color: rgb(150,150,150);
+        font-size: 12px;
+        line-height: 17px;
     }
 `;

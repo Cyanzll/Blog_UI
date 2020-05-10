@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Article from './components/Arcticle';
+import { actionCreators } from './store';
+import Article from './components/Article';
 import Author from './components/Author';
 import Recommend from './components/Recommend';
+import { connect } from 'react-redux';
 import {
 	Body,
 	DetailWrapper,
@@ -13,6 +15,7 @@ import {
 class Detail extends Component {
 	componentDidMount() {
 		window.scrollTo(0,0);
+		this.props.detailDataCatch(this.props.match.params.id); //抓取数据
 	}
 	render() {
 		return (
@@ -34,4 +37,10 @@ class Detail extends Component {
 	}
 }
 
-export default Detail;
+const mapDispatchToProps = (dispatch) => ({
+	detailDataCatch(id) {
+		dispatch(actionCreators.getDetailDataAction(id));
+	}
+});
+
+export default connect(null, mapDispatchToProps)( Detail );

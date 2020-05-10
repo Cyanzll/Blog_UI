@@ -3,36 +3,16 @@ import axios from 'axios';
 import { fromJS } from 'immutable';
 //applying thunk
 
-export const getHomeDataAction = () => {
+export const getDetailDataAction = (id) => {
 	return (dispatch) => {
-		axios.get('api/home.json').then((res)=>{
+		axios.get('api/detail.json').then((res)=>{
 			const data = res.data;
-			dispatch(getHomeData(data.data))
-		})
+			dispatch(getDetailData(data.data))
+		});
 	}
 };
 
-export const getLoadMoreAction = ( Page ) => {
-	return (dispatch) => {
-		axios.get('api/homeList.json?page=' + Page).then((res)=>{
-			const data = res.data;
-			dispatch(getExtraData(data.data))
-		})
-	}
-}
-
-export const toggleScrollAction = (scroll) => ({
-	type: actionTypes.TOGGLE_SCROLL,
-	scroll: scroll
-});
-
-
-const getExtraData = (data) => ({
-	type: actionTypes.GET_EXTRA_DATA,
-	data: data
-});
-
-const getHomeData = (data) => ({
-	type: actionTypes.GET_HOME_DATA,
+const getDetailData = (data) => ({
+	type: actionTypes.GET_DETAIL_DATA,
 	data: data
 });

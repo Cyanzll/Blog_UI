@@ -14,12 +14,12 @@
 
 		"articleList": [{
 			"id": 1,
-			"author": "Frank",
-			"star": "689",
-			"comment": "987",
-			"title": "胡歌12年后首谈车祸",
-			"desc": "文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...",
-			"imgUrl": "https://upload-images.jianshu.io/upload_images/18428859-36813934492261df.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+			"author": "Cyan_zll",
+			"star": "27",
+			"comment": "978",
+			"title": "工作之余，有计划地提高自己",
+			"desc": "我想做写作，发现基本知识非常多，包括编辑，投稿在哪个平台，都要研究一番，我想对理财有更深入的了解，随着学习的深入也会发现要学的内容变得越来越多，...",
+			"imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589120798359&di=d2fcdf86723e14ed06429e7fb41ab576&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171128%2F1b734008618749b496b7a97a396b7dcc.jpeg"
 			}, {
 			"id": 2,
 			"author": "Frank",
@@ -49,10 +49,10 @@
 		"writerList": [
 			{
 				"id": 1,
-				"name": "Frank",
-				"total": 320,
-				"likes": 2,
-				"imgUrl": "https://upload.jianshu.io/users/upload_avatars/5796592/73837104-47e5-4fe9-a5be-054bd50b06f7.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+				"name": "Cyan_zll",
+				"total": 1,
+				"likes": 1,
+				"imgUrl": "https://upload.jianshu.io/users/upload_avatars/22396740/196d67d3-7108-416a-8d23-f91351317a74.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
 			},{
 				"id": 2,
 				"name": "Frank",

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
 	AuthorWrapper,
 	Avatar,
-	AuthorInfo
+	AuthorInfo,
+	RecItem
 } from '../style';
 
 class Author extends Component {
@@ -10,16 +12,36 @@ class Author extends Component {
 		return(
 				<AuthorWrapper>
 					<AuthorInfo>
-						<Avatar alt="cyan" src="https://upload.jianshu.io/users/upload_avatars/22396740/196d67d3-7108-416a-8d23-f91351317a74.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"/>
+						<Avatar alt={this.props.author} src={this.props.avatar}/>
 						<div className="info">
-							<a className="name">Cyan_zll</a>
+							<a className="name">{this.props.author}</a>
 							<span>总资产 0.088</span>
 						</div>
 					</AuthorInfo>
 					<div className="divide"></div>
+					{
+						this.props.authorlist.map((item, index) => {
+							return(
+								<RecItem key={item.get("id")}>
+								<div className="head"><a>{item.get("title")}</a></div>
+								<div className="total"><span>阅读 {item.get("total")}</span></div>
+								</RecItem>
+							)
+						})
+					}
 				</AuthorWrapper>
 		);
 	}
 }
 
-export default Author;
+const mapStateToProps = (state) => ({
+	author: state.getIn(["detail","author"]),	
+	avatar: state.getIn(["detail","avatar"]),
+	authorlist: state.getIn(["detail","authorlist"])
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)( Author );
