@@ -32,8 +32,8 @@ class Home extends PureComponent {
 		return (
 			<HomeWrapper>
 				<HomeLeft>
-					<img className="banner_img" alt="" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588239306626&di=610954fef8e631ff758682539b50c17c&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fitbbs%2F1712%2F12%2Fc12%2F69564401_1513047787066_mthumb.jpg"/>
-					<Topic />
+					<img className="banner_img" alt="SZ" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589120798359&di=d2fcdf86723e14ed06429e7fb41ab576&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171128%2F1b734008618749b496b7a97a396b7dcc.jpeg"/>
+					<Topic/>
 					<List />
 				</HomeLeft>
 				<HomeRight>

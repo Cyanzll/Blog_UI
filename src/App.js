@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './pages/home';
 import Detail from './pages/detail';
+import Login from './pages/login';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header/>
         <Route path='/' exact component = {Home}></Route>
         <Route path='/detail' exact component = {Detail}></Route>
+        <Route path='/login' exact component = {Login}></Route>
       </BrowserRouter>
     </Provider>
   );

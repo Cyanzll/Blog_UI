@@ -9,20 +9,31 @@ export const HeaderWrapper = styled.div`
 	border-bottom: 1px solid #F0F0F0;
 	box-shadow: 0 2px 10px rgba(0,0,0,.05);
 	background: #fff;
+	overflow: hidden;
 	z-index: 1;
+	.scrollUp {
+		transform: translateY(-56px);
+	}
 `;
 
 export const HeaderWidthLimit = styled.div`
 	width: 1440px;
-	height: 56px;
+	height: 115px;
 	margin: 0 auto;
+	transition: all 200ms ease-in;
+`;
+
+export const HeaderFirst = styled.div`
+	width: 1440px;
+	height: 56px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 `;
 
 export const Logo = styled.div`
-	position: absolute;
-	top:0;
-	left: 240px;
 	width: 100px;
+	margin-right: 140px;
 	height: 56px;
 	display: block;
 	background: url(${logoPic}); //webpack打包问题
@@ -34,6 +45,11 @@ export const Nav = styled.div`
 	height: 100%;
 	margin: 0 auto;
 	box-sizing: border-box;
+`;
+
+export const Addition = styled.div`
+	width: 240px;
+	height: 56px;
 `;
 
 export const NavItem = styled.div`
@@ -97,13 +113,6 @@ export const NavSearch = styled.input.attrs({
 	}
 `;
 
-export const Addition = styled.div`
-	position: absolute;
-	right: 240px;
-	top: 0;
-	height: 56px;
-`;
-
 export const Button = styled.button`
 	float: right;
 	line-height: 38px;
@@ -113,6 +122,7 @@ export const Button = styled.button`
 	margin-right: 20px;
 	padding: 0 20px;
 	font-size: 14px;
+	cursor: pointer;
 	&.reg {
 		color: #ec6149;
 		background: #fff;
@@ -175,13 +185,16 @@ export const SearchInfoTitle = styled.div`
 		line-height: 20px;
 		font-size: 14px;
 		cursor: pointer;
+		&:hover {
+			color: #333;
+		}
 		.spin {
-			display: block
-			float:right;
+			float: left;
+			height: 13px;
 			font-size: 13px;
 			margin-right: 2px;
-			transition: all 200ms ease-in;
-			transform-origin: center center;
+			transition: all 300ms ease-out;
+			transform-origin: 40% 67%;
 		}
 	}
 `;
@@ -200,4 +213,27 @@ export const SearchInfoItem = styled.a`
 	font-size: 12px;
 	border: 1px solid #ddd;
 	border-radius: 3px;
+	cursor: pointer;
+	transition: all 100ms ease-in;
+	&:hover {
+		color: #888;
+		border: 1px solid #888;
+	}
+`;
+
+export const HeaderSecond = styled.div`
+	margin-left: 240px;
+	width: 960px;
+	height: 56px;
+`;
+
+export const ArticleTitle = styled.div`
+	margin: 0 auto;
+	width: 960px;
+	.title {
+		color: #404040;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 56px;
+	}
 `;

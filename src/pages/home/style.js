@@ -11,6 +11,7 @@ export const HomeLeft = styled.div`
     width: 625px;
     padding: 30px 0 0 15px;
     .banner_img {
+        object-fit: cover;
         display: block;
         width: 625px;
         height: 270px;

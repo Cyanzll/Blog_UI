@@ -6,7 +6,8 @@ const defaultState = fromJS({
 	mouseIn: false,
 	list: [], //turn to immutable
 	currentPage: 1,
-	totalPage: 0
+	totalPage: 0,
+	degree: 0
 });
 
 export default ( state = defaultState, action ) => {
@@ -32,7 +33,7 @@ export default ( state = defaultState, action ) => {
 
 		case actionTypes.SWITCH: {
 			const page = state.get("currentPage") === state.get("totalPage") ? 1 : state.get("currentPage") + 1; //循环改变当前页码
-			return state.set("currentPage", page);
+			return state.set("currentPage", page).set("degree", action.deg);
 		}
 
 		default:

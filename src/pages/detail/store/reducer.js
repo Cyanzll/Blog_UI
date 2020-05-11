@@ -9,7 +9,9 @@ const defaultState = fromJS({
 	date: '',	 //提交日期
 	time: '',  //提交时间
 	authorlist: [], //该作者的其他文章列表
-	reclist: [] //推荐阅读列表
+	reclist: [], //推荐阅读列表
+	scroll: false,
+	inDetail: false
 });
 
 const getDetailData = (state, action) => {
@@ -29,6 +31,10 @@ export default ( state = defaultState, action ) => {
 	switch (action.type) {
 		case actionTypes.GET_DETAIL_DATA: 
 			return getDetailData(state, action);
+		case actionTypes.SCROLL_Y:
+			return state.set("scroll", action.data);
+		case actionTypes.GET_IN_DETAIL:
+			return state.set("inDetail", action.data);
 		default:
 			return state;
 	}

@@ -28,8 +28,9 @@ export const getLeaveAction = () => ({
     type:actionTypes.LEAVE
 });
 
-export const getSwitchAction = () => ({
+export const getSwitchAction = (deg) => ({
 	type: actionTypes.SWITCH,
+	deg: deg
 });
 
 //private

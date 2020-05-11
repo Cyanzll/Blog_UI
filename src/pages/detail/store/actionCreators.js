@@ -12,6 +12,16 @@ export const getDetailDataAction = (id) => {
 	}
 };
 
+export const getInDetailAction = (istrue) => ({
+	type: actionTypes.GET_IN_DETAIL,
+	data: istrue
+});
+
+export const getScrollAction = (data) => ({
+	type: actionTypes.SCROLL_Y,
+	data: data
+});
+
 const getDetailData = (data) => ({
 	type: actionTypes.GET_DETAIL_DATA,
 	data: data
