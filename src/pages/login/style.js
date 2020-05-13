@@ -7,12 +7,11 @@ export const Bg = styled.div`
 	left:0;
 	height: 100%;
 	width: 100%;
-	background: url(${Bgimg});
+	background: #f9f9f9;
 	background-size: cover;
 `;
 
 export const Body = styled.div`
-	background: rgba(0,0,0,0.2);
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -36,19 +35,24 @@ export const LoginBox = styled.div`
 		width: 272px;
 		height: 40px;
 		margin-bottom: 20px;
-		font-size: 16px;
+		font-size: 15px;
 		color: rgb(64,64,64);
 		padding: 0 10px;
 		background: #eee;
-		border: none;
-		transition: all 50ms ease-in;
+		border: 1px solid #fff;
+		border-radius: 2px;
+		transition: all 100ms ease-in;
 		&::placeholder {
 			color: #999
-			font-size: 16px;
+			font-size: 15px;
 		}
 	}
 	input:focus {
 		background: #fff;
+		border: 1px solid #ea6f5a;
+	}
+	input:hover {
+		border: 1px solid #ea6f5a;
 	}
 `;
 
