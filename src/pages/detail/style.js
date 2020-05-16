@@ -5,6 +5,7 @@ export const Body = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
 `;
 
 export const DetailWrapper = styled.div`
@@ -159,7 +160,7 @@ export const RecommendWrapper = styled.div`
     top: 66px;
     .title {
         margin-bottom: 16px;
-        border-left: 4px solid rgb(236,114,89);
+        border-left: 4px solid 	#008B8B;
         font-size: 16px;
         padding-left: 6px;
     }

@@ -16,7 +16,7 @@ class Topic extends PureComponent {
 						</TopicItem>
 					))
 				}
-				<TopicItem className = "more"><a href="">更多热门专题 ></a></TopicItem>
+				<TopicItem className = "more"><a href="">更多专题 ></a></TopicItem>
 			</TopicWrapper>
 		)
 	}

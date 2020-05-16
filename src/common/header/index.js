@@ -52,12 +52,12 @@ class Header extends Component {
 					onMouseLeave={handleMouseLeave}
 				>
 					<SearchInfoTitle>
-						<span className="title">热门搜索</span>
+						<span className="title">今日热搜</span>
 						<span className="switch"
 							onClick={ handleSwitchShow.bind(this, this.props.degree) }
 						>
 							<span ref={ e => this.spinIcon = e } className="iconfont spin">&#xe851;</span>
-							换一批
+							换一换
 						</span>
 					</SearchInfoTitle>
 					<SearchInfoList>
@@ -87,7 +87,7 @@ class Header extends Component {
 						<Nav>
 							<Link to="/">
 								<NavItem className="left index">
-									<span className="iconfont">&#xe6a1;</span> 首页
+									<span className="iconfont">&#xe6a1;</span> 主页
 								</NavItem>
 							</Link>
 							<NavItem className="left">
@@ -98,9 +98,6 @@ class Header extends Component {
 									登录
 								</NavItem>
 							</Link>
-							<NavItem className="right">
-								<span className="iconfont">&#xe636;</span>
-							</NavItem>
 							<NavSearchWrapper>
 								<CSSTransition
 									timeout = {350}

@@ -4,6 +4,7 @@ export const HomeWrapper = styled.div`
     width: 960px;
     margin: 0 auto;
     overflow: hidden;
+    min-height: 100vh; /*保证底部在最下*/
 `;
 
 export const HomeLeft = styled.div`
@@ -39,6 +40,7 @@ export const TopicItem = styled.div`
     line-height: 32px;
     font-size: 14px;
     color: #555;
+    cursor: pointer;
     margin-left: 18px;
     margin-bottom: 18px;
     border: 1px solid #dcdcdc;
@@ -57,6 +59,9 @@ export const TopicItem = styled.div`
         width: 32px;
         height: 32px;
         margin-right: 10px;
+    }
+    &:hover {
+        background: #fff;
     }
 `;
 
@@ -123,8 +128,10 @@ export const Bottom = styled.div`
 
 export const Banner = styled.img`
     width: 280px;
-    height: 50px;
-    margin-bottom: 6px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 11px;
+    border-radius: 10px;
 `;
 
 export const DownloadApp = styled.a`
@@ -235,7 +242,7 @@ export const LoadMore = styled.div`
     margin-bottom: 60px;
     background: #A5A5A5;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 15px;
     line-height: 20px;
     color: #FFF;
@@ -251,11 +258,12 @@ export const GetTop = styled.div`
     border: 1px solid rgb(220, 220, 220);
     position: fixed;
     right: 100px;
-    bottom: 70px;
+    bottom: 100px;
     padding-top: 14px;
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
+    background: #fff;
     .iconfont{
         font-size:20px;
         line-hieght:20px;

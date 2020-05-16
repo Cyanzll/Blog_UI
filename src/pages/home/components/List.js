@@ -38,7 +38,7 @@ class List extends PureComponent {
 						</ListItem>
 					))
 				}
-			<LoadMore onClick={() => {this.props.handleLoadMore(this.props.articleListPage)}}>阅读更多</LoadMore>
+			<LoadMore onClick={() => {this.props.handleLoadMore(this.props.articleListPage)}}>点击显示更多</LoadMore>
 			</Fragment>
 		);
 	}

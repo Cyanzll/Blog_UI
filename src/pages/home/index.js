@@ -32,7 +32,7 @@ class Home extends PureComponent {
 		return (
 			<HomeWrapper>
 				<HomeLeft>
-					<img className="banner_img" alt="SZ" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589120798359&di=d2fcdf86723e14ed06429e7fb41ab576&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171128%2F1b734008618749b496b7a97a396b7dcc.jpeg"/>
+					<img className="banner_img" alt="SZ" src={require('../../statics/psb.jpg')}/>
 					<Topic/>
 					<List />
 				</HomeLeft>

@@ -59,6 +59,7 @@ export const NavItem = styled.div`
 	font-size: 17px;
 	padding: 0 15px;
 	&.left {
+		cursor: pointer;
 		margin-right:5px;
 		float: left;
 		.iconfont {
@@ -79,8 +80,11 @@ export const NavItem = styled.div`
 			font-size:17px;
 		}
 	}
+	&.right:hover {
+		background:#f5f5f5;
+	}
 	&.index {
-		color: #ea6f5a;
+		color: #008080;
 	}
 
 `;
@@ -91,7 +95,7 @@ export const NavSearch = styled.input.attrs({
 	width: 178px;
 	height: 38px;
 	border: none;
-	border-radius: 19px;
+	border-radius: 2px;
 	margin-top: 9px;
 	padding: 0 35px 0 20px;
 	background: #eee;
@@ -118,13 +122,13 @@ export const Button = styled.button`
 	line-height: 38px;
 	border-radius: 19px;
 	margin-top: 9px;
-	border: 1px solid #ec6149;
+	border: 1px solid #008B8B;
 	margin-right: 20px;
 	padding: 0 20px;
 	font-size: 14px;
 	cursor: pointer;
 	&.reg {
-		color: #ec6149;
+		color: #008B8B;
 		background: #fff;
 	}
 	&.reg:hover {
@@ -133,7 +137,10 @@ export const Button = styled.button`
 	
 	&.write {
 		color: #fff;
-		background: #ec6149;
+		background: #008B8B;
+	}
+	&.write:hover {
+		background: #008080;
 	}
 `;
 

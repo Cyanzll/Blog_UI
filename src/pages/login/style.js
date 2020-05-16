@@ -7,8 +7,9 @@ export const Bg = styled.div`
 	left:0;
 	height: 100%;
 	width: 100%;
-	background: #f9f9f9;
+	background: url(${Bgimg});
 	background-size: cover;
+	min-height: 100vh;
 `;
 
 export const Body = styled.div`
@@ -17,6 +18,15 @@ export const Body = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	animation: bg 500ms ease-out forwards;
+	@keyframes bg {
+		from{
+			background: rgba(255,255,255,1);
+		}
+		to{
+			background: rgba(255,255,255,0);
+		}
+	}
 `;
 
 export const LoginBox = styled.div`
@@ -49,10 +59,10 @@ export const LoginBox = styled.div`
 	}
 	input:focus {
 		background: #fff;
-		border: 1px solid #ea6f5a;
+		border: 1px solid #008B8B;
 	}
 	input:hover {
-		border: 1px solid #ea6f5a;
+		border: 1px solid #008B8B;
 	}
 `;
 
@@ -61,8 +71,8 @@ export const Title = styled.div`
 	margin-bottom: 40px;
 	.login {
 		font-size: 20px;
-		color: #ea6f5a;
-		font-weight: 500;
+		color: #008B8B;
+		font-weight: 530;
 	}
 `;
 
@@ -80,7 +90,7 @@ export const Addition = styled.div`
 `;
 
 export const Button = styled.button`
-	background: #ea6f5a;
+	background: #008B8B;
 	width: 272px;
 	height: 35px;
 	line-hieght: 30px;
@@ -91,7 +101,7 @@ export const Button = styled.button`
 	cursor: pointer;
 	transition: all 50ms ease-in;
 	&: hover {
-		background: #ec6149;
+		background: #008080;
 	}
 `;
 
