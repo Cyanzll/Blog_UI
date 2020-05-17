@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/cyanblog/static/js/main.c0faf5f2.chunk.js",
-    "main.js.map": "/cyanblog/static/js/main.c0faf5f2.chunk.js.map",
+    "main.js": "/cyanblog/static/js/main.63392223.chunk.js",
+    "main.js.map": "/cyanblog/static/js/main.63392223.chunk.js.map",
     "runtime-main.js": "/cyanblog/static/js/runtime-main.0853f31c.js",
     "runtime-main.js.map": "/cyanblog/static/js/runtime-main.0853f31c.js.map",
     "static/js/2.981e1541.chunk.js": "/cyanblog/static/js/2.981e1541.chunk.js",
     "static/js/2.981e1541.chunk.js.map": "/cyanblog/static/js/2.981e1541.chunk.js.map",
     "index.html": "/cyanblog/index.html",
-    "precache-manifest.855594277382d8ac0427200b18f4a8d6.js": "/cyanblog/precache-manifest.855594277382d8ac0427200b18f4a8d6.js",
+    "precache-manifest.e0e59a20d509e79731e3e367047e761a.js": "/cyanblog/precache-manifest.e0e59a20d509e79731e3e367047e761a.js",
     "service-worker.js": "/cyanblog/service-worker.js",
     "static/js/2.981e1541.chunk.js.LICENSE.txt": "/cyanblog/static/js/2.981e1541.chunk.js.LICENSE.txt",
     "static/media/bg.jpg": "/cyanblog/static/media/bg.7684ed93.jpg",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.0853f31c.js",
     "static/js/2.981e1541.chunk.js",
-    "static/js/main.c0faf5f2.chunk.js"
+    "static/js/main.63392223.chunk.js"
   ]
 }

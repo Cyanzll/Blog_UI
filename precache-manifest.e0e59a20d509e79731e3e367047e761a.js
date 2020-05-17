@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "974fd1e55f0696919ba9ed633e8e0fb4",
+    "revision": "15c2f1e6ddf532816374e4338746f284",
     "url": "/cyanblog/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cyanblog/static/js/2.981e1541.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "96b77c2eefa7159183b8",
-    "url": "/cyanblog/static/js/main.c0faf5f2.chunk.js"
+    "revision": "a69982f1c2742478d824",
+    "url": "/cyanblog/static/js/main.63392223.chunk.js"
   },
   {
     "revision": "c5a2fd3aad6dc6a34906",
