@@ -1,0 +1,46 @@
+{
+	"success": true,
+	"data": {
+		"articleList": [{
+			"id": 10,
+			"title": "React Hook 笔记(1)",
+			"read": "4",
+            "desc": "useEffect(effect, [])- useEffect()在渲染完成后执行，而且是每次渲染完后都执行- effect中能够返回一个函数，该函数将在组件卸载前执行，以实现与componentWillUnmount()类似的功能（一般用于清除副作用）- 这个被返回的清除函数，事实上也是每次渲染后都执行，这会减少bug!<https://zh-hans.reactjs.org/docs/hooks-effect.html#explanation-why-effects-run-on-each-update>在class组件中，为了避免在每次更新后都清理/执行effect，我们常这样利用componentDidUpdate()",
+			"date": "2020-5-23",
+			"category": "React",
+			"tags": ["React","Hook"]
+			}, {
+                "id": 9,
+                "title": "深化React单项数据流：状态提升",
+                "read": "2",
+                "desc": "由于React的单向数据流，组件无法修改自己的props，只能通过父组件传递的方法来修改父组件的state，向下引起props的变化。在 React 应用中，任何可变数据应当只有一个相对应的唯一“数据源”。通常，state 都是首先添加到需要渲染数据的组件中去。然后，**如果其他组件也需要这个 state，**那么你可以将它提升至这些组件的**最近的共同父组件**中。应当依靠自上而下的数据流，而不是尝试在不同组件间同步 state。官方demo的实现：",
+                "date": "2020-5-21",
+                "category": "React",
+                "tags": ["React","前端"]
+            },{
+                "id": 8,
+                "title": "React.js 文档笔记",
+                "read": "13",
+                "desc": "根据官网了解到，React既有以下工具链：Node.js构建服务端渲染网站，可使用Next.js；面向内容的静态网站，可使用Gatsby以及更灵活的Neutrino、Parcel、Razzle目前对React还不够熟练，因此现以简单了解为主。React 元素渲染元素是React应用的最小单位。React元素一经创建就是不可变的（immutable），更新的唯一方法是重新创建元素并渲染；尽管如此，React DOM会将当前元素与之前的进行比较，只做必要的更新。（重要且深刻）",
+                "date": "2020-5-21",
+                "category": "React",
+                "tags": ["React","前端"]
+            },{
+                "id": 7,
+                "title": "Redux 中间件（2） ",
+                "read": "4",
+                "desc": "1. 添加 React-redux 到项目react-redux并不是内置在redux里的，因此要单独添加：cd到项目目录，执行\n`yarn add react-redux`\n 2. React-redux 的组件拆分规范\nreact-redux把组件分成了两个大类：UI组件 和 容器组件\nUI组件：UI组件的特征有：只负责UI渲染，不带有业务逻辑，是典型的无状态组件，没有state，所有数据由props提供，不使用Redux的API\n容器组件：容器组件的特征有：负责管理数据和业务逻辑，不负责UI渲染，有内部状态，使用Redux的API",
+                "date": "2020-5-2",
+                "category": "React",
+                "tags": ["React","Redux"]
+            },{
+                "id": 6,
+                "title": "Redux 中间件",
+                "read": "13",
+                "desc": "首先由View让Action Creator创建一个action，action通过dispatch()方法被直接派发给store，store将action和previousState传送给Reducer做数据处理，Reducer返回一个新的state给store，再由store将state返回给View。类似thunk这样的Redux中间件，它就工作在Action和Store之间，可以认为主要是对Dispatch()方法的一种增强。有了thunk中间件，dispatch()方法在被传入action时，如果发现action是一个函数，则会执行该函数，而不是派发给store；同时，中间件thunk还给action函数传输了一个dispatch参数，方便在action函数执行一定操作之后，直接调用dispatch()对数据进行修改。",
+                "date": "2020-4-27",
+                "category": "React",
+                "tags": ["React","Redux"]
+            }]
+	}
+}
