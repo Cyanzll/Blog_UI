@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cyanblog/precache-manifest.bafe8aacf1a988a1f74900002315751e.js"
+  "/cyanblog/precache-manifest.b187657421bebdac7d70dad3d1d85560.js"
 );
 
 self.addEventListener('message', (event) => {
